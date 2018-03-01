@@ -10,27 +10,30 @@ int distance(int x1, int y1, int x2, int y2){
 	return d;
 }
 
-//	Function to decide the Next Passanger to Pick Up
-int nextPassenger(int s[], int N)
+//	Function to decstartTimeIDe the Next Passaenger to Pick Up
+void nextPassenger(int startTimes[], int startTimeID[], int N)
 {
     int swap;
-    int ID[N];
+    int i, j;
 
-    for(int i=0; i<N; i++)
-        ID = i;
-    for(int i=1; i<N; i++)
+    for(i=0; i<N; i++)
     {
-        j = i;
+         startTimeID[i] = i;
+    }
 
-        while(j>0 && s[j] < s[j-1])
+    for (i=1; i<N; i++)
+    {
+        for(j=i; (j>0 && (startTimes[j] < startTimes[j-1])); j--)
         {
-            swap = s[j];
-            s[j] = s[i];
-            s[i] = swap;
+            swap = startTimes[j];
+            startTimes[j] = startTimes[j-1];
+            startTimes[j-1] = swap;
 
-            swap = ID[j];
-            ID[j] = ID[i];
-            ID[i] = swap;
+            swap = startTimeID[j];
+            startTimeID[j] = startTimeID[j-1];
+            startTimeID[j-1] = swap;
         }
     }
+
+
 }
