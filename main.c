@@ -1,11 +1,10 @@
 #include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include "headers.h"
 
-/*main source file
- *
- *By Joseph Dempsey and Conor Dunne
- */
-
-int main(void){
+int main(void)
+{
     int R, C;	//Number of Rows, Columns
 	int F;		//Number of vehicles in the fleet
 	int N;		//Number of rides
@@ -14,7 +13,7 @@ int main(void){
 
 //  Open Input File
 	FILE *fp;
-        fp = fopen("a.in", "r");
+        fp = fopen("b.in", "r");
 
 //  Scan in First Line
     fscanf(fp, "%d %d %d %d %d %d", &R, &C, &F, &N, &B, &T);
@@ -52,5 +51,16 @@ int main(void){
 
     printf("\n\n");
 
+    int startTimeID[N];
+    for(int i=1; i<N; i++)
+        startTimeID[i] = i;
+
+    nextPassenger(s, startTimeID, N);
+
+    printf(" ID\t\tStart Time");
+
+    for(int i=0; i<N; i++)
+        printf("\n %d\t\t%d", startTimeID[i], s[i]);
+
 	return 0;
-}//end of main
+}
