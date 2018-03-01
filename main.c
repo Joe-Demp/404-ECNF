@@ -51,16 +51,37 @@ int main(void)
 
     printf("\n\n");
 
-    int startTimeID[N];
+    int ID[N];
     for(int i=1; i<N; i++)
-        startTimeID[i] = i;
+        ID[i] = i;
 
-    nextPassenger(s, startTimeID, N);
+    nextPassenger(s, ID, N);
 
     printf(" ID\t\tStart Time");
 
     for(int i=0; i<N; i++)
-        printf("\n %d\t\t%d", startTimeID[i], s[i]);
+        printf("\n %d\t\t%d", ID[i], s[i]);
+
+//  Cars Position
+    int posX[F];    //  X Co-Ordiant of Car F
+    int posY[F];    //  Y Co-Ordiant of Car F
+//  Cars Destination
+    int destX[F];   //  Destination X of Car F
+    int destY[F];   //  Destination Y of Car F
+
+    for(int i=0; i<F; i++)
+    {
+//  Cars Start at Origin [0, 0]
+        posX[i] = 0;
+        posY[i] = 0;
+
+//  Give Cars First Destination
+        destX[i] =
+        destY[i]
+    }
+
+
+
 
 	return 0;
 }
