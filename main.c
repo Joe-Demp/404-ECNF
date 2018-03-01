@@ -1,9 +1,14 @@
 #include <stdio.h>
-
+#include <stdbool.h>
 /*main source file
  *
  *By Joseph Dempsey and Conor Dunne
  */
+
+typedef struct Car{
+	int x, y;	//The car's coordinates
+	bool free;	//whether the car is free (True) or has a passenger (false)
+}Car;
 
 int main(void){
     int R, C;	//Number of Rows, Columns
@@ -14,7 +19,7 @@ int main(void){
 
 //  Open Input File
 	FILE *fp;
-        fp = fopen("a.in", "r");
+        fp = fopen("a_example.in", "r");
 
 //  Scan in First Line
     fscanf(fp, "%d %d %d %d %d %d", &R, &C, &F, &N, &B, &T);
@@ -49,6 +54,15 @@ int main(void){
         printf("\n Start Time %d:\t%d", i, s[i]);
         printf("\n End Time %d:\t%d", i, f[i]);
     }
+
+    /*An array containing details about the cars and it's initialisation*/
+    Car cars[F];
+    for(int i = 0; i < F; ++i){
+    	(cars[i]).x = 0;
+    	(cars[i]).y = 0;
+    	(cars[i]).free = true;
+    }//end of for 
+    printf("\n\nx = %d, y = %d, free = %d\n", cars[F-1].x, cars[F-1].y, cars[F-1].free);
 
     printf("\n\n");
 
