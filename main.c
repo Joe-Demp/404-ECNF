@@ -76,8 +76,8 @@ int main(void)
         posY[i] = 0;
 
 //  Give Cars First Destination
-        destX[i] =
-        destY[i]
+        destX[i] = a[ID[i]];
+        destY[i] = b[ID[i]];
     }
 
 
